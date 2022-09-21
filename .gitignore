@@ -1,0 +1,8 @@
+$ cat .gitignore
+# exclude everything except directory foo/bar
+bin
+obj
+publish
+.env
+env-secret-configurations.env
+.vs
