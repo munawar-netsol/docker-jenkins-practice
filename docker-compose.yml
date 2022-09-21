@@ -1,4 +1,4 @@
-version: "1.22"
+version: '3.0'
 services:
     contract-modification-service:
         container_name: contract-modification-service
