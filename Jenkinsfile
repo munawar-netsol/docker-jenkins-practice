@@ -6,7 +6,9 @@ pipeline {
 			parallel {
 				stage('Code Build') {
 					steps {
-						sh 'dotnet build JenkinsDockerPractice/ContractModificationService.csproj'
+						sh 'dotnet publish "JenkinsDockerPractice/ContractModificationService.csproj" -c Release -o JenkinsDockerPractice/app/publish'
+						
+						sh 'docker-compose up -d'
 					}
 					
 				}
