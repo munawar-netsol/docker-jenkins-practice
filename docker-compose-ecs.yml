@@ -2,7 +2,5 @@ version: '3.0'
 services:
     contract-modification-service:
         container_name: contract-modification-service
-        build: JenkinsDockerPractice/app/publish
-        ports:
-            - "5012:82"
+        build: JenkinsDockerPractice/app/publish        
         image: munawersheikh/docker-pipeline-ecs-image:latest
