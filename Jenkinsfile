@@ -15,6 +15,7 @@ pipeline {
 		}
 		stage('Cleanup') {
 			steps {
+				sh 'docker context use default'
 				sh 'docker system prune --force'
 			}
 			
@@ -41,8 +42,7 @@ pipeline {
 			
 		stage('Deploy to ECS') {
 
-			steps {
-				sh 'docker context create ecs myecs --from-env'
+			steps {				
 				sh 'docker context use myecs'
 				sh 'docker-compose up'
 			}
