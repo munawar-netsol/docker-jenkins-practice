@@ -44,7 +44,7 @@ pipeline {
 
 			steps {				
 				sh 'docker context use myecs'
-				sh 'docker compose up'
+				sh 'docker compose --file docker-compose-ecs.yml up'
 				sh 'docker compose ps --format-json'
 			}
 		}	
