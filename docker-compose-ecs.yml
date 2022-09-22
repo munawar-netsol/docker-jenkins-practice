@@ -4,5 +4,5 @@ services:
         container_name: contract-modification-service
         build: JenkinsDockerPractice/app/publish
         ports:
-            - "5012:80"
+            - "5012:82"
         image: munawersheikh/docker-pipeline-ecs-image:latest
