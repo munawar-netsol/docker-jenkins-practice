@@ -7,7 +7,7 @@ pipeline {
 				stage('Code Build') {
 					steps {
 						sh 'docker-compose down'
-						sh 'docker container prune'
+						sh 'docker stop /contract-modification-service'
 						
 						sh 'dotnet publish "JenkinsDockerPractice/ContractModificationService.csproj" -c Release -o JenkinsDockerPractice/app/publish'
 						
