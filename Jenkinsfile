@@ -9,7 +9,7 @@ pipeline {
 
 			steps {
 				withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
-					sh 'echo @user'
+					sh "echo $user"
 					
 				}
 			}				
