@@ -17,7 +17,14 @@ pipeline {
 				sh 'docker system prune --force'
 			}
 			
-		}	
+		}
+
+		stage('Docker Compose Context') {
+			steps {
+				sh 'docker context use default'
+			}			
+		}
+		
 		stage('Docker Compose') {
 			steps {
 				sh 'docker-compose up --build -d'
