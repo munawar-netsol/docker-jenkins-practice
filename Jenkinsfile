@@ -27,7 +27,7 @@ pipeline {
 		
 		stage('Docker Push') {
 			steps {
-				sh 'docker push munawersheikh/docker-pipeline-ecs-image'
+				sh 'docker-compose push'
 			}			
 		}
 		
