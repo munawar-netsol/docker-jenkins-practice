@@ -44,7 +44,7 @@ pipeline {
 
 			steps {				
 				sh 'docker context use myecs'
-				sh 'docker-compose up'
+				sh 'docker-compose up -d'
 			}
 		}	
 	}
