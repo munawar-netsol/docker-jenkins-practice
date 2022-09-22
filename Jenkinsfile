@@ -44,8 +44,8 @@ pipeline {
 
 			steps {				
 				sh 'docker context use myecs'
-				sh 'docker-compose up -d'
-				sh 'docker-compose ps --format-json'
+				sh 'docker compose up -d'
+				sh 'docker compose ps --format-json'
 			}
 		}	
 	}
