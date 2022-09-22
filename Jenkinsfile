@@ -37,12 +37,12 @@ pipeline {
 				sh 'docker-compose push'
 			}
 		}
-		
-		post {
+				
+	}
+	post {
 			always {
 				sh 'docker logout'
 			}
-		}
-		
 	}
+		
 }
