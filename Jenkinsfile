@@ -24,15 +24,25 @@ pipeline {
 				sh 'docker-compose up --build -d'
 			}			
 		}
-		
-		
-		stage('Docker Push') {
+		stage('Login') {
+
 			steps {
 				sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
+			}
+		}
+
+		stage('Push') {
+
+			steps {
 				sh 'docker-compose push'
-			}			
+			}
 		}
 		
+		post {
+			always {
+				sh 'docker logout'
+			}
+		}
 		
 	}
 }
