@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	environment {
-		DOCKER_HUB_CREDS = credentials('munawersheikh')
+		DOCKER_HUB_CREDS = credentials('dockerhub')
 	}
 	stages
 	{     
@@ -28,6 +28,7 @@ pipeline {
 		
 		stage('Docker Push') {
 			steps {
+				sh 'echo $dockerhub_PSW' | docker login -u $dockerhub_USR --password-stdin'
 				sh 'docker-compose push'
 			}			
 		}
