@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	environment {
+		DOCKER_HUB_CREDS = credentials('munawersheikh')
+	}
 	stages
 	{     
 
@@ -15,11 +18,19 @@ pipeline {
 			}
 			
 		}	
-		stage('Code Compose') {
+		stage('Docker Compose') {
 			steps {
 				sh 'docker-compose up --build -d'
-			}
-			
+			}			
 		}
+		
+		
+		stage('Docker Push') {
+			steps {
+				sh 'docker-compose push'
+			}			
+		}
+		
+		
 	}
 }
