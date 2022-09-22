@@ -5,6 +5,3 @@ services:
         build: JenkinsDockerPractice/app/publish
         ports:
             - "5002:80"
-    web:
-        build: ./
-        image: munawersheikh/web:latest
