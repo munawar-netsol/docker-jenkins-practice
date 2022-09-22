@@ -8,7 +8,7 @@ pipeline {
 					steps {
 						sh 'dotnet publish "JenkinsDockerPractice/ContractModificationService.csproj" -c Release -o JenkinsDockerPractice/app/publish'
 						
-						sh 'docker-compose up -d'
+						sh 'docker-compose up --build -d'
 					}
 					
 				}
