@@ -42,6 +42,7 @@ pipeline {
 		stage('Deploy to ECS') {
 
 			steps {
+				sh 'docker context create ecs myecs --from-env'
 				sh 'docker context use myecs'
 				sh 'docker-compose up'
 			}
