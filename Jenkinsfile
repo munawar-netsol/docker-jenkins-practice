@@ -18,12 +18,6 @@ pipeline {
 			}
 			
 		}
-
-		stage('Docker Compose Context') {
-			steps {
-				sh 'docker context use default'
-			}			
-		}
 		
 		stage('Docker Compose') {
 			steps {

@@ -5,3 +5,4 @@ services:
         build: JenkinsDockerPractice/app/publish
         ports:
             - "5002:80"
+        image: munawersheikh/docker-pipeline-ecs-image
