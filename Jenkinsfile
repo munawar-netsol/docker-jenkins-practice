@@ -4,7 +4,7 @@ pipeline {
 	{     
 		stage('Deploy to ECS') {
 			steps {				
-				sh 'docker context use myecs'			
+				sh 'docker context use myecscontext'			
 			}
 		}	
 	}
