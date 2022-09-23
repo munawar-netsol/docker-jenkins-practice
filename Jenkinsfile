@@ -9,7 +9,7 @@ pipeline {
 		stage('Deploy to ECS') {
 
 			steps {	
-			    sh 'sudo -su ec2-user'				
+			    sh 'exit'				
 				sh 'docker context use myecs'
 				sh 'sudo -su jenkins'				
 			}
