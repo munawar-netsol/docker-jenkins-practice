@@ -42,8 +42,7 @@ pipeline {
 			
 		stage('Deploy to ECS') {
 
-			steps {	
-				sh 'docker context rm myecs'			
+			steps {				
 				sh 'docker context create myecs --from-env'			
 				sh 'docker context use myecs'
 				sh 'docker compose --file docker-compose-ecs.yml up'
