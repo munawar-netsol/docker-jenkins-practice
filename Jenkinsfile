@@ -23,7 +23,7 @@ pipeline {
 		
 		stage('Docker Compose') {
 			steps {
-				sh 'docker compose build'
+				sh 'docker compose up --build -d'
 			}			
 		}
 		stage('Login') {
